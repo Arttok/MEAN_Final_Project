@@ -10,17 +10,20 @@ import { Routes, RouterModule }  from '@angular/router';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { NavComponent } from './nav/nav.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: IndexComponent}
+  {path: '', component: IndexComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    NavComponent
+    NavComponent,
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,
