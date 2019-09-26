@@ -11,11 +11,13 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     IndexComponent,
     NavComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
