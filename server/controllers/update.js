@@ -5,11 +5,6 @@ var session = require('express-session')
 
 var userController = {};
 
-// GET: http://localhost:3000/register/
-userController.updatePageInfo = (req, res) => {
-    res.render('update', { title: 'Update' });
-};
-
 
 // GET: http://localhost:3000/update/user/
 userController.getUserInfo = (req, res) => {
