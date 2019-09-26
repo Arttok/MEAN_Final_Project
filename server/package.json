@@ -1,0 +1,36 @@
+{
+  "name": "mean-lab2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www -e js --inspect"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.1.0",
+    "express": "^4.16.4",
+    "express-session": "^1.16.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql2": "^1.7.0",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.19.0"
+  },
+  "description": "Goals:\r - Create 4 Web pages using HSB Templates.\r   - Home Page - from Capstone.\r   - Registration Page\r     - Appropriate Menu Items\r     - Forms with username, password, password confirmaiton, email address fields.\r     - Appripriate validation.\r       - Checks if user already exists.\r       - if not adds user and redirects to login.\r     - If user already exists\r       - shows message on page.\r   - Login Page\r     - Appropriate Menu Items\r     - User name, Password fields & Error Message.\r     - If user doesn't exist\r       - show error message on page.\r     - Uf yser exsusts\r       - redirects into landing page.",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arttok/MEAN_LAB5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arttok/MEAN_LAB5/issues"
+  },
+  "homepage": "https://github.com/Arttok/MEAN_LAB5#readme"
+}
