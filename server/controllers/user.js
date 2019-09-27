@@ -71,6 +71,8 @@ UserController.delete = (req, res) => {
 };
 
 UserController.signin = (req, res) => {
+    console.log(req.body.user_name);
+    console.log(req.body.user_password);
     var user_name = req.body.user_name;
     var user_password = req.body.user_password;
     if (user_name == null || user_name == '' || user_password == null || user_password == '') {
@@ -85,11 +87,10 @@ UserController.signin = (req, res) => {
             if (user != false)
             {   
                 res.json(user); 
-                console.log(req.body)
                 session.user_id = user.id;
                 session.admin = user.is_admin;
             } else {
-                res.status(403).send("fail");
+                res.json({ "error": "No User found" });
             }
         })
         .catch((err) => {
