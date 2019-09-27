@@ -13,15 +13,17 @@ import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LeaguesComponent } from './leagues/leagues.component';
-import { UpdateComponent } from './update/update.component';
+import { EditComponent } from './edit/edit.component';
 
+//Services
+import { AuthService } from './providers/auth.service';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'leagues', component: LeaguesComponent},
-  {path: 'update', component: UpdateComponent}
+  {path: 'edit', component: EditComponent}
 ];
 
 @NgModule({
@@ -32,7 +34,7 @@ const appRoutes: Routes = [
     RegisterComponent,
     LoginComponent,
     LeaguesComponent,
-    UpdateComponent
+    EditComponent
   ],
   imports: [
     HttpClientModule,
@@ -40,7 +42,9 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
