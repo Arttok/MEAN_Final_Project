@@ -14,8 +14,6 @@ export class AuthService {
     }),
     withCredentials: true
   };
-
-  private authenticated: boolean = false;
   constructor(private http: HttpClient) {}
 
   login(userName: string, password: string) {
@@ -26,13 +24,5 @@ export class AuthService {
   register(userName: string, email: string, password: string) {
       return this.http.post(`${this.usersEndpoint}register`, {user_name : userName, user_password : password, email : email, is_admin: 0}, this.httpOptions)
       .pipe(map(res => <any[]>res));
-  }
-
-  setAuthStatus(status: boolean) {
-    this.authenticated = status;
-  }
-
-  getAuthStatus() {
-    return this.authenticated;
   }
 }
