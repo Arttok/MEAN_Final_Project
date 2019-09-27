@@ -12,12 +12,16 @@ import { IndexComponent } from './index/index.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { LeaguesComponent } from './leagues/leagues.component';
+import { UpdateComponent } from './update/update.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'leagues', component: LeaguesComponent},
+  {path: 'update', component: UpdateComponent}
 ];
 
 @NgModule({
@@ -26,7 +30,9 @@ const appRoutes: Routes = [
     IndexComponent,
     NavComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    LeaguesComponent,
+    UpdateComponent
   ],
   imports: [
     HttpClientModule,
