@@ -9,6 +9,7 @@ import { TeamService } from './../providers/teams.service';
   styleUrls: ['./leagues.component.css']
 })
 export class LeaguesComponent implements OnInit {
+  showMyContainer: boolean = false;
 
   regions: Array<any> = [];
   leagues: Array<any> = [];
@@ -43,4 +44,11 @@ export class LeaguesComponent implements OnInit {
     });
   }
 
+  onSelect() {
+    console.log(this.selected);
+  }
+
+  viewAll(): void {
+    console.log(this.selected);
+  }
 }
