@@ -1,0 +1,30 @@
+<!--Main section of the page. Has the menu bar as well as table that is generated via JS-->
+<main>
+    <form class="col-12" method="GET">
+      <!--Should be Post but not due to github / live server reasons.-->
+      <div class="col-12 text-light">
+        <div class="text-center">
+          <p class="h2">Seach for Hart-eSport Teams!</p>
+          <select id="leagueDropdown">
+            <option value="select">Choose One</option>
+            <option value="all">All</option>
+            <option value="Male">Male Only</option>
+            <option value="Female">Female Only</option>
+            <option value="DnD" id="DnD">D&D adventurers league</option>
+          </select>
+          <p class="text-light h3" id="DnDtxt"></p>
+          <figure>
+            <img src="#" alt="error" id="errorimg" class="hidden"/>
+          </figure>
+          <br />
+          <div class="pt-3">
+            <p class="text-light h2" id="noTeam">No Teams have been added for this League!</p>
+            <table
+              class="table table-bordered text-light"
+              id="teamsList"
+            ></table>
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
