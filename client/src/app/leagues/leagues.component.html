@@ -7,12 +7,12 @@
           <p class="h2">Seach for Hart-eSport Teams!</p>
           <select (change)="onSelect()" id="leagueDropdown">
             <option value="select">Choose One</option>
-            <option value="all">All</option>
+            <option value="all" (click)="viewAll()">All</option>
             <option value="Male">Male Only</option>
             <option value="Female">Female Only</option>
             <option value="DnD" id="DnD">D&D adventurers league</option>
-            <option *ngFor="let region of regions" [ngValue]="region" value="{{region.Name}}" id="{{region.Name}}">{{region.Name}}</option>
-            <option *ngFor="let league of leagues" [ngValue]="league" value="{{league.Name}}" id="{{league.Code}}">{{league.Name}}</option>
+            <option *ngFor="let region of regions" value="{{region.Name}}" id="{{region.Name}}">{{region.Name}}</option>
+            <option *ngFor="let league of leagues" value="{{league.Name}}" id="{{league.Code}}">{{league.Name}}</option>
           </select>
           
           <p class="text-light h3" id="DnDtxt"></p>
