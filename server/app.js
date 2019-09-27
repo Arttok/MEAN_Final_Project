@@ -22,6 +22,14 @@ app.use(function(req, res, next) {
   next();
 });
 
+const cors = require('cors');
+app.use(cors({
+  origin:[
+    "http://localhost:4200"
+  ],
+  credentials: true
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -61,7 +69,6 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
 });
 
 app.listen(PORT, () => {
