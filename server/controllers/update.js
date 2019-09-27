@@ -1,6 +1,5 @@
 // require new custom Service Module
 var userService = require('../services/userService');
-var express = require('express');
 var session = require('express-session')
 
 var userController = {};

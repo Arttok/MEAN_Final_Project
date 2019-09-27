@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { AuthService } from './../providers/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +12,6 @@ export class LoginComponent implements OnInit {
 
   error: boolean = false;
   errMsg: string = '';
-  
-  // create instance of UserService
-  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -31,21 +25,6 @@ export class LoginComponent implements OnInit {
     } else {
       this.error = false;
       this.errMsg = '';
-
-      // Call authService to authenticate
-      this.authService.login(this.userName, this.password).subscribe(data => {
-        console.log("~~~~~~~~~~~~~~~~~~~~~~")
-        console.log(data)
-        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        if (data['error']) {
-          this.errMsg = 'Login unsuccessful.';
-          this.error = true;
-          this.authService.setAuthStatus(false);
-        } else {
-          this.authService.setAuthStatus(true);
-          this.router.navigate(['']);
-        }
-      });
     }
   }
 

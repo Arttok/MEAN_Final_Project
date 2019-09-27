@@ -1,5 +1,4 @@
 const User = require("../db/connection").users;
-var session = require('express-session');
 
 // The Service uses the Sequelize ORM for DB CRUD operations
 // and returns results to the calling Controller

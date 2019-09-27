@@ -1,37 +1,14 @@
 var express = require('express');
-var router = express.Router();
-var fs = require('fs');
+var leaguesRouter  = express.Router();
+const api = require('../controllers/leagues');
 
-  
-router.get('/data', function(req, res, next){
-  try {
-    res.end(fs.readFileSync('./data/leagues.json'));
-  } catch (err) {
-    res.end('[]');
-  }
-});
+// GET http://localhost:3000/leagues/data
+leaguesRouter.get('/leagues', api.getLeagues);
 
-router.get('/teams', function(req, res, next){
-  try {
-    res.end(fs.readFileSync('./data/teams.json'));
-  } catch (err) {
-    res.end('[]');
-  }
-});
+// GET http://localhost:3000/leagues/teams
+leaguesRouter.get('/teams', api.getTeams);
 
-router.get('/regions', function(req, res, next){
-  try {
-    res.end(fs.readFileSync('./data/regions.json'));
-  } catch (err) {
-    res.end('[]');
-  }
-});
+// GET http://localhost:3000/leagues/regions
+leaguesRouter.get('/regions', api.getRegions);
 
-router.get('/details/teams/:id', function(req, res, next){
-  try {
-    res.end(fs.readFileSync('./data/teams.json'));
-  } catch (err) {
-    res.end('[]');
-  }
-});
-  module.exports = router;
+module.exports = leaguesRouter ;
