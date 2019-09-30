@@ -5,24 +5,44 @@
       <div class="col-12 text-light">
         <div class="text-center">
           <p class="h2">Seach for Hart-eSport Teams!</p>
-          <select id="leagueDropdown">
+          <select (change)="onSelect()" id="leagueDropdown">
             <option value="select">Choose One</option>
             <option value="all">All</option>
             <option value="Male">Male Only</option>
             <option value="Female">Female Only</option>
             <option value="DnD" id="DnD">D&D adventurers league</option>
+            <option *ngFor="let region of regions" value="{{region.Name}}" id="{{region.Name}}">{{region.Name}}</option>
+            <option *ngFor="let league of leagues" value="{{league.Name}}" id="{{league.Code}}">{{league.Name}}</option>
           </select>
+          
           <p class="text-light h3" id="DnDtxt"></p>
           <figure>
             <img src="#" alt="error" id="errorimg" class="hidden"/>
           </figure>
           <br />
           <div class="pt-3">
-            <p class="text-light h2" id="noTeam">No Teams have been added for this League!</p>
-            <table
-              class="table table-bordered text-light"
-              id="teamsList"
-            ></table>
+            <table id="teams" class="tables table-striped table-bordered col-md-8 offset-md-2">
+              <thead>
+                  <tr>
+                      <th>Team Name</th>
+                      <th>League</th>
+                      <th>Region</th>
+                      <th>Gender</th>
+                      <th>Max Team Members</th>
+                      <th>Manager</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let team of teams">
+                      <td>{{team.TeamName}}</td>
+                      <td>{{team.League}}</td>
+                      <td>{{team.Region}}</td>
+                      <td>{{team.TeamGender}}</td>
+                      <td>{{team.MaxTeamMembers}}</td>
+                      <td>{{team.ManagerName}}</td>
+                  </tr>
+              </tbody>
+          </table>
           </div>
         </div>
       </div>
