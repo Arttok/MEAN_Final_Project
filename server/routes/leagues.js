@@ -2,7 +2,7 @@ var express = require('express');
 var leaguesRouter  = express.Router();
 const api = require('../controllers/leagues');
 
-// GET http://localhost:3000/leagues/data
+// GET http://localhost:3000/leagues/leagues
 leaguesRouter.get('/leagues', api.getLeagues);
 
 // GET http://localhost:3000/leagues/teams
