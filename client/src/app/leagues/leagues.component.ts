@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RegionService } from './../providers/regions.service';
 import { LeagueService } from './../providers/leagues.service';
 import { TeamService } from './../providers/teams.service';
+import { AuthService } from '../providers/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-leagues',
@@ -21,9 +23,12 @@ export class LeaguesComponent implements OnInit {
       private regionService: RegionService,
       private leaguesService: LeagueService,
       private teamService: TeamService,
+      private authService: AuthService,
+      private router: Router
       ) {}
 
   ngOnInit() {
+
     this.regionService.getRegion().subscribe(region => {
       this.regions = region;
     });
@@ -33,17 +38,16 @@ export class LeaguesComponent implements OnInit {
     });
 
     this.teamService.getTeam().subscribe(teams => {
-      console.log("teams");
-      console.log(teams)
-      console.log(teams[3].Region);
-      console.log("~~~~~~~~~~~")
       this.teams = teams;
+      this.filterTeams = this.teams;
     });
+
+    if(!this.authService.getAuthStatus()) {
+      this.router.navigate(['login']);
+    }
   }
 
   onSelect($event, val: string) {
-    console.log(val)
-    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     let text = $event.target.options[$event.target.options.selectedIndex].text;
     console.log(text)
     if (val == "all")

@@ -32,6 +32,11 @@ export class EditComponent implements OnInit {
       this.user_name = data[1];
       this.user_password = data[2];
       this.email = data[3];
+
+      //makes sure that the user is Auth.
+      if(!this.authService.getAuthStatus()) {
+        this.router.navigate(['login']);
+      }
     });
   }
 
