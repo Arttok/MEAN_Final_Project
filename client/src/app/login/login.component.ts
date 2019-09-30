@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../providers/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +15,10 @@ export class LoginComponent implements OnInit {
   error: boolean = false;
   errMsg: string = '';
 
+  constructor(
+    private authService: AuthService, 
+    private router: Router) {}
+
   ngOnInit() {}
 
   onSubmit(): void {
@@ -25,6 +31,16 @@ export class LoginComponent implements OnInit {
     } else {
       this.error = false;
       this.errMsg = '';
+
+       // Call AuthService to authenticate
+       this.authService.login(this.userName, this.password).subscribe(data => {
+        if (data['error']) {
+          this.errMsg = 'Login unsuccessful.';
+          this.error = true;
+        } else {
+          this.router.navigate(['']);
+        }
+      })
     }
   }
 
