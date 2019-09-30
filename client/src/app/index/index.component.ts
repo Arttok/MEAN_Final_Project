@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,26 +7,20 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./index.component.css']
 })
 
-export class IndexComponent implements OnInit {
-    closeResult: string;
-  
-    constructor(private modalService: NgbModal) {}
-  
-    open(content) {
-      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-        this.closeResult = `Closed with: ${result}`;
-      }, (reason) => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      });
-    }
-  
-    private getDismissReason(reason: any): string {
-      if (reason === ModalDismissReasons.ESC) {
-        return 'by pressing ESC';
-      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-        return 'by clicking on a backdrop';
-      } else {
-        return  `with: ${reason}`;
-      }
-    }
-  }
+export class IndexComponent {
+  closeResult: string;
+
+  constructor(private modalService: NgbModal) {}
+
+  openA(contentA): void {
+    this.modalService.open(contentA, {size: 'xl'})
+  };  
+
+  openB(contentB): void {
+    this.modalService.open(contentB, {size: 'xl'})
+  };
+
+  openC(contentC): void {
+    this.modalService.open(contentC, {size: 'xl'})
+  };
+}
