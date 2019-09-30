@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../providers/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -6,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+  id: number;
+  user_name: string;
+  user_password: string;
+  email: string;
+  is_admin: number;
+  confirm_pass: string;
+
 
   constructor() { }
 

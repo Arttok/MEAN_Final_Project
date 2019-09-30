@@ -7,6 +7,7 @@ var userController = {};
 
 // GET: http://localhost:3000/update/user/
 userController.getUserInfo = (req, res) => {
+    console.log(session.user_id)
     userService.getUserInfo(session.user_id)
     .then((user) => {
         if (user) {   
