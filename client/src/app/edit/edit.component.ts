@@ -12,7 +12,7 @@ export class EditComponent implements OnInit {
   id: number;
   user_name: string;
   email: string;
-  confirm_pass: string = "";
+  confirm_pass: string;
   user_password: string;
   is_admin: number;
 
@@ -28,7 +28,6 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUser().subscribe(data => {
-      console.log(data);
       this.id = data[0];
       this.user_name = data[1];
       this.user_password = data[2];
@@ -46,16 +45,12 @@ export class EditComponent implements OnInit {
       this.errMsg = 'User name is required.';
       this.error = true;
     } else if (this.confirm_pass == '') {
-      console.log(this.confirm_pass)
-      console.log(this.user_password)
       this.errMsg = "Please Confirm your password. It can't be left blank.";
       this.error = true;
     } else if (this.email == '') {
       this.errMsg = 'Email is required.';
       this.error = true;
     } else if (this.confirm_pass != '' && this.user_password != this.confirm_pass) {
-      console.log(this.confirm_pass)
-      console.log(this.user_password)
       this.errMsg = 'Confirmed Password is not correct.';
       this.error = true;
     } else {
@@ -67,7 +62,6 @@ export class EditComponent implements OnInit {
           this.errMsg = 'Login unsuccessful.';
           this.error = true;
         } else {
-          console.log("working")
           this.confirm_pass = '';
           this.router.navigate(['edit']);
         }
