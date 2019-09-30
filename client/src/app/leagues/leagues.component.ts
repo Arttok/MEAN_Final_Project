@@ -14,6 +14,7 @@ export class LeaguesComponent implements OnInit {
   regions: Array<any> = [];
   leagues: Array<any> = [];
   teams: Array<any> = [];
+  filterTeams: Array<any> = [];
   selected;
     constructor(
       private regionService: RegionService,
@@ -23,30 +24,34 @@ export class LeaguesComponent implements OnInit {
 
   ngOnInit() {
     this.regionService.getRegion().subscribe(region => {
-      console.log("region");
-      console.log(region);
-      console.log("~~~~~~~~~~~")
       this.regions = region;
     });
 
     this.leaguesService.getLeague().subscribe(league => {
-      console.log("league");
-      console.log(league);
-      console.log("~~~~~~~~~~~")
       this.leagues = league;
     });
 
     this.teamService.getTeam().subscribe(teams => {
       console.log("teams");
-      console.log(teams);
+      console.log(teams)
+      console.log(teams[3].Region);
       console.log("~~~~~~~~~~~")
       this.teams = teams;
     });
   }
 
-  onSelect() {
-    console.log(this.selected);
-  }
+  onSelect(val: string) {
+    if (val == "all")
+      {
+        console.log(this.teams)
+        this.filterTeams = this.teams;
+      } else {
+        this.filterTeams = this.teams.filter(
+        teams => teams.Region === val);
+        console.log(val);
+      }
+    }
+
 
   viewAll(): void {
     console.log(this.selected);
