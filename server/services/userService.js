@@ -67,6 +67,7 @@ userService.getUserInfo = (userId) => {
 
 
 userService.delete = (userId) => {
+    console.log("User Servive Here")
     return User.destroy({ where: { id: userId } })
         .then(user => {
             return user;

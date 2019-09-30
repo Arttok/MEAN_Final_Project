@@ -37,7 +37,14 @@ export class LoginComponent implements OnInit {
         if (data['error']) {
           this.errMsg = 'Login unsuccessful.';
           this.error = true;
+          this.authService.setAuthStatus(false);
         } else {
+          if(data['is_admin'] == 1)
+          {
+            console.log("Correct")
+            this.authService.setAdminStatus(true);
+          }
+          this.authService.setAuthStatus(true);
           this.router.navigate(['']);
         }
       })
