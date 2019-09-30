@@ -23,12 +23,13 @@ UserController.list = (req, res) => {
 
 // PUT: http://localhost:3000/users/
 UserController.update = (req, res) => {    
+    console.log(req.body.id)
+    console.log(req.body.user_name)
+    console.log(req.body.email)
     userService.update({
             id: req.body.id,
             user_name: req.body.user_name,
-            user_password: req.body.user_password,
-            email: req.body.email,
-            is_admin: req.body.is_admin
+            email: req.body.email
         })
         .then((user) => {
             res.json(user);
