@@ -46,7 +46,7 @@ userService.signin = (userObj) => {
 }
 
 userService.update = (userObj) => {
-    return User.update({ user_name: userObj.user_name, user_password: userObj.user_password, email: userObj.email, is_admin: userObj.is_admin }, { where: { id: userObj.id } })
+    return User.update({ user_name: userObj.user_name, email: userObj.email}, { where: { id: userObj.id } })
         .then(user => {
             return user;
         })
