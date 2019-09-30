@@ -21,7 +21,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     // Check to see if user is Auth to be here
     if(!this.authService.getAdminStatus()) {
-      this.router.navigate(['login']);
+      this.router.navigate(['']);
     }
 
     // Display info on all users who aren't admin

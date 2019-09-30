@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
        // Call AuthService to authenticate
        this.authService.login(this.userName, this.password).subscribe(data => {
         if (data['error']) {
-          this.errMsg = 'Login unsuccessful.';
+          this.errMsg = 'Login unsuccessful. Username or Password is incorrect.';
           this.error = true;
           this.authService.setAuthStatus(false);
         } else {
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
             this.authService.setAdminStatus(true);
           }
           this.authService.setAuthStatus(true);
-          this.router.navigate(['']);
+          this.router.navigate(['leagues']);
         }
       })
     }

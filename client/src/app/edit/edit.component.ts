@@ -28,6 +28,7 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUser().subscribe(data => {
+      console.log(data);
       this.id = data[0];
       this.user_name = data[1];
       this.user_password = data[2];
@@ -66,7 +67,9 @@ export class EditComponent implements OnInit {
           this.errMsg = 'Login unsuccessful.';
           this.error = true;
         } else {
-          this.router.navigate(['/']);
+          console.log("working")
+          this.confirm_pass = '';
+          this.router.navigate(['edit']);
         }
       })
     }
