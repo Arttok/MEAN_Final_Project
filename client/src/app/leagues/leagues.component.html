@@ -5,14 +5,12 @@
       <div class="col-12 text-light">
         <div class="text-center">
           <p class="h2">Seach for Hart-eSport Teams!</p>
-          <select (change)="onSelect($event.target.value)" id="leagueDropdown">
-            <option value="select">Choose One</option>
-            <option value="all">All</option>
+          <select (change)="onSelect($event, $event.target.value)" id="leagueDropdown">
+            <option value="all" name="All">All</option>
             <option value="Male">Male Only</option>
             <option value="Female">Female Only</option>
-            <option value="DnD" id="DnD">D&D adventurers league</option>
-            <option *ngFor="let region of regions" value="{{region.Code}}" name="region" id="{{region.Code}}">{{region.Name}}</option>
-            <option *ngFor="let league of leagues" value="{{league.Name}}" name="leagues" id="{{league.Code}}">{{league.Name}}</option>
+            <option *ngFor="let region of regions" value="Region" id="{{region.Name}}">{{region.Name}}</option>
+            <option *ngFor="let league of leagues" value="League" id="{{league.Code}}">{{league.Name}}</option>
           </select>
           
           <p class="text-light h3" id="DnDtxt"></p>

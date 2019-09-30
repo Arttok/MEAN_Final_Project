@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
-  private usersEndpoint: string = 'http://localhost:3000/update/user';
+  private usersEndpoint: string = 'http://localhost:3000/';
 	private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
@@ -20,14 +20,19 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getUser(): Observable<any> {
-    return this.http.get(`${this.usersEndpoint}`, this.httpOptions)
+    return this.http.get(`${this.usersEndpoint}update/user`, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }
 
   deleteUser(id: number): Observable<any> {
     console.log(id);
     console.log(typeof id);
-    return this.http.delete(`http://localhost:3000/users/` + id, this.httpOptions)
+    return this.http.delete(`${this.usersEndpoint}users/` + id, this.httpOptions)
+    .pipe(map(res => <any[]>res));
+  }
+
+  getAll(): Observable<any> {
+    return this.http.get(`${this.usersEndpoint}Users`, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }
 }

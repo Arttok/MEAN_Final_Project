@@ -22,13 +22,15 @@ import { LeagueService } from './providers/leagues.service';
 import { RegionService } from './providers/regions.service';
 import { UserService } from './providers/user.service';
 import { TeamService } from './providers/teams.service';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'leagues', component: LeaguesComponent},
-  {path: 'edit', component: EditComponent}
+  {path: 'edit', component: EditComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     LoginComponent,
     LeaguesComponent,
-    EditComponent
+    EditComponent,
+    AdminComponent
   ],
   imports: [
     HttpClientModule,

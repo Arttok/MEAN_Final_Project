@@ -58,6 +58,12 @@
                 >
                   Edit
                 </a>
+                <a
+                  class="dropdown-item btn text-light mask" id="update"
+                  (click)="goHere('admin')" *ngIf="getAdmin()"
+                >
+                  Admin
+                </a>
               </div>
             </div>
           </div>
