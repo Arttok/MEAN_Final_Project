@@ -60,6 +60,7 @@ UserController.register = (req, res) => {
 
 // DELETE: http://localhost:3000/users/{user_id} 
 UserController.delete = (req, res) => {
+    console.log("Hello!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     console.log(req.params.user_id)
     userService.delete(req.params.user_id)
         .then((user) => {

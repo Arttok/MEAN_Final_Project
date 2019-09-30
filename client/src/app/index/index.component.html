@@ -1,13 +1,13 @@
-        <!--Banner Image-->
-        <figure>
-        <img src="/assets/img/eSports.jpg" alt="eSports" id="esports" />
-        </figure>
+<!--Banner Image-->
+<figure>
+<img src="/assets/img/eSports.jpg" alt="eSports" id="esports" />
+</figure>
 
-        <!--Main Text Section-->
-        <main class="text-light">
-        <section id="homePage">
-            <h1 class="text-center">Hart-eSports</h1>
-            <p class="offset-md-1" id="homeText">
+<!--Main Text Section-->
+<main class="text-light">
+    <section id="homePage">
+        <h1 class="text-center">Hart-eSports</h1>
+        <p class="offset-md-1" id="homeText">
             HartCode eSports offers several different leagues. These leagues
             change based upon the different seasons. Currently we have the
             following leagues available: WoW Spring EU Cup, WoW Spring NA Cup, WoW
@@ -17,13 +17,12 @@
             league, please visit the
             About Me section. There you can
             find out all of the rules and regulaitons of each league.
-            </p>
-            <h2 class="offset-md-4 pl-5">Why is eSports important?</h2>
-            <div class="row justify-content-center">
-                <div class="column">
+        </p>
+        <h2 class="offset-md-4 pl-5">Why is eSports important?</h2>
+        <div class="row justify-content-center">
+            <div class="column">
                 <!--Graph A These are purposly indented like this to show that there is an image, and then the p text goes right after it.-->
                 <img
-                    ng-click="open(/assets/img/eSportGraphAlrg.jpg)"
                     src="/assets/img/eSportGraphA.jpg"
                     class="pl-5"
                     alt="eSports Audience Growth 2016 - 2020"
@@ -38,8 +37,8 @@
                     2018. It is expected to keep up this increase to over 518 million
                     in 2020, a 14.1% increase.
                 </p>
-                </div>
-                <div class="column offset-md-1">
+            </div>
+            <div class="column offset-md-1">
                 <!--Graph B-->
                 <img
                     src="/assets/img/eSportGraphB.jpg"
@@ -55,8 +54,8 @@
                     Bowl. Only 28 million people watched the MLB World Series 2017
                     (Game 7) and 24 million viewers for NBA Finals 2017 (Game 5).
                 </p>
-                </div>
-                <div class="column pl-5">
+            </div>
+            <div class="column pl-5">
                 <!--Graph C-->
                 <img
                     src="/assets/img/eSportGraphC.jpg"
@@ -71,7 +70,28 @@
                     largely driven by media rights deals, sponsorships, and
                     advertising sales.
                 </p>
-                </div>
             </div>
-            </section>
-        </main>
+        </div>
+    </section>
+</main>
+
+<ng-template #content let-modal>
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <p>Hello</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+</div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr>
+
+<pre>{{closeResult}}</pre>

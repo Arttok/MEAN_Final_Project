@@ -55,8 +55,7 @@ export class EditComponent implements OnInit {
     } else {
       this.error = false;
       this.errMsg = '';
-      // Call AuthService to authenticate
-      
+      // Call AuthService to authenticate      
       this.authService.update(this.id, this.user_name, this.email).subscribe(data => {
         if (data['error']) {
           this.errMsg = 'Login unsuccessful.';
@@ -64,6 +63,25 @@ export class EditComponent implements OnInit {
         } else {
           this.router.navigate(['/']);
         }
+      })
+    }
+  }
+
+  onDelete(): void {
+    if (this.confirm_pass != '' && this.user_password != this.confirm_pass) {
+      this.errMsg = 'Your confirmation password is incorrect.';
+      this.error = true;
+    } else if (this.confirm_pass == '') {
+      this.errMsg = 'You need to confirm your password to delete your account.';
+      this.error = true;
+    } else {
+      this.error = false;
+      this.errMsg = '';
+
+    this.userService.deleteUser(this.id).subscribe(data => {
+        this.authService.setAuthStatus(false);
+        this.authService.setAdminStatus(false);
+        this.router.navigate(['']);
       })
     }
   }

@@ -16,6 +16,25 @@ export class AuthService {
   };
   constructor(private http: HttpClient) {}
 
+  private isAuth: boolean = false;
+  private isAdmin: boolean = false;
+
+  setAuthStatus(status: boolean) {
+    this.isAuth = status;
+  }
+
+  getAuthStatus() {
+    return this.isAuth;
+  }
+
+  setAdminStatus(status: boolean) {
+    this.isAdmin = status;
+  }
+
+  getAdminStatus() {
+    return this.isAdmin;
+  }
+
   login(userName: string, password: string) {
       return this.http.post(`${this.usersEndpoint}signin`, {user_name : userName, user_password : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
