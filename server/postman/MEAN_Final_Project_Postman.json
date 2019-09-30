@@ -26,6 +26,69 @@
 			"response": []
 		},
 		{
+			"name": "Get all Regions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/leagues/regions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leagues",
+						"regions"
+					]
+				},
+				"description": "Get all Regions"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all  Leagues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/leagues/leagues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leagues",
+						"leagues"
+					]
+				},
+				"description": "Get all Leagues"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/leagues/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leagues",
+						"teams"
+					]
+				},
+				"description": "Get all Teams"
+			},
+			"response": []
+		},
+		{
 			"name": "User Registration",
 			"request": {
 				"method": "POST",
@@ -81,7 +144,7 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
+						"value": "text/plain",
 						"type": "text"
 					}
 				],
@@ -90,35 +153,46 @@
 					"urlencoded": [
 						{
 							"key": "id",
-							"value": "2",
+							"value": "13",
 							"type": "text"
 						},
 						{
-							"key": "userName",
-							"value": "BizBaz",
+							"key": "user_name",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "user_password",
+							"value": "Password",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "bizbaz@test.com",
+							"value": "Admin@Test.com",
 							"type": "text"
 						},
 						{
-							"key": "isAdmin",
+							"key": "is_admin",
 							"value": "1",
 							"type": "text"
 						}
-					]
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users",
+					"raw": "http://localhost:3000/users/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"users"
+						"users",
+						""
 					]
 				},
 				"description": "PUT User update"
