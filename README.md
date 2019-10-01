@@ -78,3 +78,6 @@ webpack: Compiled successfully.
 ## Getting Started
 - To view the home page in the browser, you would go to:
 http://localhost:4200/
+
+## Special Thanks
+- Pam (https://github.com/WildKnitter) for an awesome readme template.

@@ -10,6 +10,7 @@ import { UserService } from '../providers/user.service';
 })
 export class AdminComponent implements OnInit {
 
+  //users array
   Users: Array<any> = [];
 
   constructor(
@@ -21,7 +22,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     // Check to see if user is Auth to be here
     if(!this.authService.getAdminStatus()) {
-      this.router.navigate(['']);
+      this.router.navigate(['login']);
     }
 
     // Display info on all users who aren't admin

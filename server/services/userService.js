@@ -16,8 +16,6 @@ userService.list = () => {
 }; 
 
 userService.register = (userObj) => {
-    console.log("userServices")
-    console.log(userObj)
     return User
         .create(userObj)
         .then(user => {
