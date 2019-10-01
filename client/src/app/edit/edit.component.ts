@@ -1,3 +1,5 @@
+//Edit TS Page
+
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../providers/user.service';
 import { AuthService } from '../providers/auth.service';
@@ -27,6 +29,7 @@ export class EditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    //Get User information and display it on the page.
     this.userService.getUser().subscribe(data => {
       this.id = data[0];
       this.user_name = data[1];
@@ -40,17 +43,19 @@ export class EditComponent implements OnInit {
     });
   }
 
+  //When the user clicks the Update button.
   onSubmit(): void {
-    if (this.user_name == '') {
+    if (this.user_name == '') { //make sure user name isn't blank.
       this.errMsg = 'User name is required.';
       this.error = true;
-    } else if (this.confirm_pass == '') {
+    } else if (this.confirm_pass == '') { //make sure confirm pass isn't blank.
       this.errMsg = "Please Confirm your password. It can't be left blank.";
       this.error = true;
-    } else if (this.email == '') {
+    } else if (this.email == '') { //make sure email isn't blank.
       this.errMsg = 'Email is required.';
       this.error = true;
     } else if (this.confirm_pass != '' && this.user_password != this.confirm_pass) {
+      //make sure username and password match.
       this.errMsg = 'Confirmed Password is not correct.';
       this.error = true;
     } else {
@@ -69,8 +74,10 @@ export class EditComponent implements OnInit {
     }
   }
 
+  //When the user clicks on the delete button.
   onDelete(): void {
     if (this.confirm_pass != '' && this.user_password != this.confirm_pass) {
+      //make sure username and password match.
       this.errMsg = 'Your confirmation password is incorrect.';
       this.error = true;
     } else if (this.confirm_pass == '') {
@@ -80,10 +87,11 @@ export class EditComponent implements OnInit {
       this.error = false;
       this.errMsg = '';
 
+    //Deletes the user and sends them back to the home page.
     this.userService.deleteUser(this.id).subscribe(data => {
-        this.authService.setAuthStatus(false);
-        this.authService.setAdminStatus(false);
-        this.router.navigate(['']);
+        this.authService.setAuthStatus(false); //Sets the user auth as false.
+        this.authService.setAdminStatus(false); //sets the user admin as false.
+        this.router.navigate(['']); //sends the user back to the home page.
       })
     }
   }
