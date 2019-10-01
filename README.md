@@ -1,6 +1,6 @@
 # MEAN Final Project
 
-![IndexPage](client/src/assets/img/readme_main.jpg?raw=true "IndexPage")
+![IndexPage](client/src/assets/img/readme_main.JPG)
 
 ## Site Author
 * **Michael Flickinger** - HartCode Academy 2019
