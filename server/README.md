@@ -1,7 +1,5 @@
 # MEAN Final Project
 
-![IndexPage](client/src/assets/img/readme_main.jpg?raw=true "IndexPage")
-
 ## Site Author
 * **Michael Flickinger** - HartCode Academy 2019
 
@@ -307,6 +305,6 @@ Output (Negative):
 - jQuery
 - Node.js
 - ProgreSQL
-- 
+
 ## Special Thanks
 - Pam (https://github.com/WildKnitter) for an awesome readme template.
