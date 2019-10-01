@@ -1,3 +1,4 @@
+//LOGIN TS Page
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../providers/auth.service';
 import { Router } from '@angular/router';
@@ -20,12 +21,13 @@ export class LoginComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit() {}
-
+  
+  //When the user clicks on login.
   onSubmit(): void {
-    if (this.userName == '') {
+    if (this.userName == '') { //make sure username isn't blank.
       this.errMsg = 'User name is required.';
       this.error = true;
-    } else if (this.password == '') {
+    } else if (this.password == '') { //make sure password isn't blank.
       this.errMsg = 'Password is required.';
       this.error = true;
     } else {
@@ -37,15 +39,14 @@ export class LoginComponent implements OnInit {
         if (data['error']) {
           this.errMsg = 'Login unsuccessful. Username or Password is incorrect.';
           this.error = true;
-          this.authService.setAuthStatus(false);
+          this.authService.setAuthStatus(false); //if user is able to login, auth is true.
         } else {
           if(data['is_admin'] == 1)
           {
-            console.log("Correct")
-            this.authService.setAdminStatus(true);
+            this.authService.setAdminStatus(true); //if user is Admin set status true.
           }
           this.authService.setAuthStatus(true);
-          this.router.navigate(['leagues']);
+          this.router.navigate(['leagues']); //send user to home.
         }
       })
     }

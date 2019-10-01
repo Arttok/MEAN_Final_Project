@@ -13,7 +13,7 @@
             <tr *ngFor="let user of Users">
                 <td>{{user.user_name}}</td>
                 <td>{{user.email}}</td>
-                <td>{{user.createdAt | slice:0:10}}</td>
+                <td>{{user.createdAt | slice:0:10}}</td> <!--Slieces so that only date appears.-->
             </tr>
         </tbody>
     </table>

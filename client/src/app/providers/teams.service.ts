@@ -1,3 +1,4 @@
+//Teams TS
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject, of} from 'rxjs';
@@ -17,6 +18,7 @@ export class TeamService {
 
   constructor(private http: HttpClient) {}
 
+  //function to get all teams.
   getTeam(): Observable<any> {
     return this.http.get(`${this.usersEndpoint}`, this.httpOptions)
     .pipe(map(res => <any[]>res));

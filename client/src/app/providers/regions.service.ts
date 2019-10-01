@@ -17,6 +17,7 @@ export class RegionService {
 
   constructor(private http: HttpClient) {}
 
+  //function to get all regions.
   getRegion(): Observable<any> {
     return this.http.get(`${this.usersEndpoint}`, this.httpOptions)
     .pipe(map(res => <any[]>res));

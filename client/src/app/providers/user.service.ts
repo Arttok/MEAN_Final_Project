@@ -1,3 +1,4 @@
+//User TS
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject, of} from 'rxjs';
@@ -19,18 +20,19 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  //function to get a users info.
   getUser(): Observable<any> {
     return this.http.get(`${this.usersEndpoint}update/user`, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }
 
+  //function to delete a user. It uses the ID of the account to find which user to delete.
   deleteUser(id: number): Observable<any> {
-    console.log(id);
-    console.log(typeof id);
     return this.http.delete(`${this.usersEndpoint}users/` + id, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }
 
+  //function to get all users info.
   getAll(): Observable<any> {
     return this.http.get(`${this.usersEndpoint}Users`, this.httpOptions)
     .pipe(map(res => <any[]>res));
