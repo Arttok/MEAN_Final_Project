@@ -79,5 +79,13 @@ webpack: Compiled successfully.
 - To view the home page in the browser, you would go to:
 http://localhost:4200/
 
+## Technologies
++ HTML / CSS3/ Bootstrap4
++ REST API
++ Node.js
++ Angular
++ PostgreSQL
++ Express
+
 ## Special Thanks
 - Pam (https://github.com/WildKnitter) for an awesome readme template.
