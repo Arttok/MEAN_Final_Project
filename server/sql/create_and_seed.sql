@@ -14,8 +14,15 @@ create table USERS (
 	PRIMARY KEY(ID)
 );
 
-insert into USER (USER_NAME, EMAIL, user_password,  IS_ADMIN) values ('Admin', 'Admin@admin.com', 'password', 1);
-insert into USER (USER_NAME, EMAIL, user_password, IS_ADMIN) values ('FooBar', 'FooBar@test.com', 'barFoo', 0);
-insert into USER (USER_NAME, EMAIL, user_password, IS_ADMIN) values ('BizBaz', 'BizBaz@test.com', 'bazBiz', 0);
+insert into USER (USER_NAME, EMAIL, user_password,  IS_ADMIN) values (0, 'Admin', 'Admin@admin.com', 'password', 1);
+insert into USER (USER_NAME, EMAIL, user_password, IS_ADMIN) values (1, 'FooBar', 'FooBar@test.com', 'barFoo', 0);
+insert into USER (USER_NAME, EMAIL, user_password, IS_ADMIN) values (2, 'BizBaz', 'BizBaz@test.com', 'bazBiz', 0);
+
+#SELECT * FROM users;
+#SELECT * FROM users WHERE is_admin = "0";
+#SELECT username, password FROM users WHERE ID = 1;
+#INSERT INTO users (ID, username, email, password, is_admin) VALUES (3, 'Michael', 'Michael@test.com', 'flickinger', '1');
+#UPDATE users SET email = 'bizbaz123@test.com' WHERE ID = 3;
+#DELETE FROM users WHERE ID = 3;
 
 SELECT * FROM USER;
