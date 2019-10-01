@@ -54,13 +54,12 @@ UserController.register = (req, res) => {
         })
         .catch((err) => {
             console.log(`Creating User error: ${err}`);
-            res.end('Creating User error.');
+            res.end('User not created.');
         });
 };
 
 // DELETE: http://localhost:3000/users/{user_id} 
 UserController.delete = (req, res) => {
-    console.log("Hello!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     console.log(req.params.user_id)
     userService.delete(req.params.user_id)
         .then((user) => {
@@ -72,6 +71,7 @@ UserController.delete = (req, res) => {
         });
 };
 
+// POST: http://localhost:3000/users/signin
 UserController.signin = (req, res) => {
     console.log(req.body.user_name);
     console.log(req.body.user_password);
