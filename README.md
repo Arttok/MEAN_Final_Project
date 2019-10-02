@@ -49,11 +49,6 @@ Note: This will use [PostgreSQL](https://www.postgresql.org/) in place of [Mongo
 + to run in development mode, to use the debugger, run ```npm run dev``` to start the server
 ```
 $ cd server
-$ npm run dev 
-```
-or
-```
-$ cd server
 $ nodemon start
 ```
 ## PostgreSQL Setup
